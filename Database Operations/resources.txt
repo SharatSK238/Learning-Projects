@@ -1,0 +1,52 @@
+RESOURCES
+https://stackoverflow.com/questions/58568175/upgrade-to-python-3-8-using-conda (OPTIONAL)
+https://queirozf.com/entries/jupyter-kernels-how-to-add-change-remove (OPTIONAL)
+https://www.prisma.io/dataguide/mysql/setting-up-a-local-mysql-database#setting-up-mysql-on-windows  ***** (MYSQL)
+https://pynative.com/python-mysql-database-connection/ (MYSQL)
+https://stackoverflow.com/questions/29355674/how-to-connect-mysql-database-using-pythonsqlalchemy-remotely (MYSQL)
+https://www.mongodb.com/try/download/community (MONGODB)
+https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/ (MONGODB)
+https://www.prisma.io/dataguide/mongodb/setting-up-a-local-mongodb-database#setting-up-mongodb-on-windows  ***** (MONGODB)
+
+
+RUNNING MYSQL ON WINDOWS
+Windows-MySQL 8.0 Command Line Client
+Enter your password.
+Here are some of the commands you can try:
+1- show databases;
+2- create database sharat;
+3- show databases;
+4- use sharat;
+5- show tables;
+6- select * from twitter_table limit 1;
+
+
+RUNNING MONGODB ON WINDOWS
+Please follow the instructions as well: https://www.prisma.io/dataguide/mongodb/setting-up-a-local-mongodb-database#setting-up-mongodb-on-windows
+1- Open CMD and run "C:\Program Files\MongoDB\Server\4.4\bin\mongod.exe"
+2- After you see "Waiting for connections" from the logs, open another CMD and run "C:\Program Files\MongoDB\Server\4.4\bin\mongo.exe"
+3- In the second CMD, run this line: show dbs and if you see anything, then you successfully setup MongoDB in your local.
+
+
+JUPYTER NOTEBOOK
+##### CREATE ENVIRONMENT #####
+conda env list
+conda update -n base -c defaults conda (Optional)
+conda create -n python38 python=3.8
+conda activate python38
+conda install jupyter
+conda install ipykernel
+ipython kernel install --name "python38" --user
+conda deactivate
+
+##### HOW TO EXPORT REQUIREMENTS.TXT #####
+You can run the following command in CMD, Terminal using Jupyter or in a Jupyter Notebook (add ! as first character if you use Jupyter)
+pip freeze > requirements.txt
+
+##### SETUP PACKAGES FROM FILE USING TERMINAL OR CMD #####
+pip install -r sharat_requirements.txt
+
+##### DELETE ENVIRONMENT #####
+conda remove --name sharatversion38 --all
+jupyter kernelspec list
+jupyter kernelspec remove sharatEnv
